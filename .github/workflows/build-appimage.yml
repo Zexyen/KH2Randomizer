@@ -3,6 +3,12 @@ name: Build AppImage
 on:
   push:
     branches: [linux-port]
+  pull_request:
+    paths:
+      - '.github/workflows/build-appimage.yml'
+      - 'packaging/linux/**'
+      - 'KH2 Randomizer Linux.spec'
+      - 'requirements.txt'
   release:
     types: [published]
   workflow_dispatch:
